@@ -5,15 +5,15 @@ skills = {"devops":("jenkins","Ansible","Docker","Terraform"),"Development":["de
 
 print("karthik")
 
-
-
-
 x=2
 y=3
 total = x+y
 print(total)
 
-
+a=12
+b=53
+out= a<b
+print(out)
 
 
 
