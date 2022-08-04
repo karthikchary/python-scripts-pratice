@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import os
 def web():
     #weburl="https://www.tooplate.com/download/2108_dashboard"
