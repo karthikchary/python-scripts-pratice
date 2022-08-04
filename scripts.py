@@ -1,7 +1,10 @@
 #!/usr/bin/python
 import os
+from urllib2 import Request, urlopen, URLError
+
 def web():
-    weburl= input("Enter Url")
+    weburl= "https://www.tooplate.com/download/2108_dashboard"
+    #weburl = Request(url)
     #weburl="https://www.tooplate.com/download/2092_shelf"
     name_of_dir=weburl.split('/')[4]
     print(name_of_dir)
