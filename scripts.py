@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import os
 def web():
-    #weburl="https://www.tooplate.com/download/2108_dashboard"
-    weburl="https://www.tooplate.com/download/2092_shelf"
+    weburl= input("Enter Url")
+    #weburl="https://www.tooplate.com/download/2092_shelf"
     name_of_dir=weburl.split('/')[4]
     print(name_of_dir)
     os.system("yum install httpd wget unzip -y")
