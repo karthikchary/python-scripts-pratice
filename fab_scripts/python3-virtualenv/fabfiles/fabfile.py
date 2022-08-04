@@ -6,5 +6,8 @@ from fabric.api import *
 def greet(msg):
     print(("Good %s.")% msg)
 
-def disk_space():
+def system_info():
+    print("Disk Space")
     local("df -h")
+    print("Ram Size")
+    local("free -m")
