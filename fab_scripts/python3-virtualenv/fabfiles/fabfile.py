@@ -13,12 +13,16 @@ def system_info():
     local("free -m")
 
 def web_setup(WEBURL, DIRNAME):
-    sudo("yum install httpd wget unzip -y")
+    local("yum install httpd wget unzip -y")
     print("start & enable service")
-    sudo("systemctl start httpd")
-    sudo("systemctl enable httpd")
-    sudo(("wget -O website.zip %s") % WEBURL)
-    sudo("unzip website.zip")
-    sudo(("cp -r %s/* /var/www/html") % DIRNAME)
+    local("systemctl start httpd")
+    local("systemctl enable httpd")
+    local(("wget -O website.zip %s") % WEBURL)
+    local("unzip website.zip")
+    with lcd(DIRNAME):
+      local("zip -r tooplate.zip *")
+      put("tooplate.zip","/var/www/html", use_sudo=True)
+    sudo("")
+    # sudo(("cp -r %s/* /var/www/html") % DIRNAME)
     sudo("systemctl restart httpd")
     print("Website setup done")
